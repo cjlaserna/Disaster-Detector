@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<style>
+    .X {
+      background-color: #F0F8FF;
+    }
+</style>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Floods</title>
+  <link rel="icon" href="./static/assets/img/disasterAI-icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="./static/assets/img/disasterAI-icon.png" type="image/png">
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="./static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="./static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="./static/assets/vendor/line-awesome/css/line-awesome.min.css" rel="stylesheet">
+  <link href="./static/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="./static/assets/css/style.css?v=7" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: SoftLand - v2.2.0
+  * Template URL: https://bootstrapmade.com/softland-bootstrap-app-landing-page-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Mobile Menu ======= -->
+  <div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close mt-3">
+        <span class="icofont-close js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div>
+
+  <!-- ======= Header ======= -->
+ 
+  <!-- ======= Header ======= -->
+  <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
+
+    <div class="container">
+      <div class="row align-items-center">
+
+        <div class="col-6 col-lg-2">
+          <h1 class="mb-0 site-logo"><a href="/" class="mb-0">GeoWarn</a></h1>
+        </div>
+
+        <div class="col-12 col-md-10 d-none d-lg-block">
+          <nav class="site-navigation position-relative text-right" role="navigation">
+
+            <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+              <li><a href="/" class="nav-link">Home</a></li>
+              <li><a href="/earthquakes" class="nav-link">Earthquakes</a></li>
+              <li><a href="/floods" class="nav-link">Floods</a></li>
+              <li class="active"><a href="/droughts" class="nav-link">Droughts</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="col-6 d-inline-block d-lg-none ml-md-0 py-3" style="position: relative; top: 3px;">
+
+          <a href="#" class="burger site-menu-toggle js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
+            <span></span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+  <main id="main">
+    <section class="X">
+    <section class="hero-section inner-page">
+
+
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12">
+            <div class="row justify-content-center">
+              <div class="col-md-7 text-center hero-text">
+                <h1 data-aos="fade-up" data-aos-delay="">Floods</h1>
+                <p class="mb-5" data-aos="fade-up" data-aos-delay="100">
+	                Using machine learning to identify and detect monetary damage of floods
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="section">
+	  {% if output != "" %}
+	    <center>
+	      <h1 class="output">{{output}}</h1>
+	    </center>
+	  {% endif %}
+      <div class="container">
+    
+    
+        <div class="row">
+
+          <div class="col-md-6 mb-5 mb-md-0 aos-init aos-animate" data-aos="fade-up">
+	        <h2>Estimated Monetary Damage</h2>
+            <p class="mb-0">Using Logistic Regression to detect monetary damage caused by flood</p><br>
+            <form action="/fires" method="post" role="form" class="php-email-form">
+
+              <div class="row">
+                <br/>
+                <div class="col-md-6 form-group">
+                  <label for="name">Longitude (-90, 90)</label>
+                  <input type="number" class="form-control" name="longitude" min="-90" max="90" required>
+                </div>
+                <div class="col-md-6 form-group">
+                  <label for="name">Latitude (-180, 180)</label>
+                  <input type="number" class="form-control" name="latitude" min="-180" max="180" required>
+                </div>
+                <div class="col-md-6 form-group">
+                  <label for="name">Discovery Month (1-12)</label>
+                  <input type="number" class="form-control" name="month" min="1" max="12" required>
+                </div>
+                <div class="col-md-6 form-group">
+                  <label for="name">Rainfall This Week Before (°C)</label>
+                  <input type="number" class="form-control" name="temperature" required>
+                </div>
+                <div class="col-md-6 form-group">
+                  <label for="name">Average Temp This week (0%-100%)</label>
+                  <input type="number" class="form-control" name="humidity" min="0" max="100" required>
+                </div>
+                <div class="col-md-6 form-group">
+                  <label for="name">Snowmelt This Week (mm)</label>
+                  <input type="number" class="form-control" name="precipitation" min="0" required>
+                </div>
+                <div class="col-md-6 form-group">
+                  <label for="name">Wind 7 Days Before (m/s)</label>
+                  <input type="number" class="form-control" name="wind" min="0" required>
+                </div>
+
+                <input type="hidden" class="form-control" name="type" value="0" required>
+
+                <div class="col-md-12 mb-3">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message"></div>
+                </div>
+
+                <div class="col-md-6 form-group">
+                  <input type="submit" class="btn btn-primary d-block w-100" value="Predict">
+                </div>
+              </div>
+              <br>
+
+
+            </form>
+          </div>
+          
+          <div class="col-md-5 mb-5 mb-md-0 aos-init aos-animate" style="margin-left: 8%;" data-aos="fade-up">
+	        <h2>Floods</h2>
+            <p class="mb-0">Using neural networks to detect floods</p><br>
+            <form action="/fires" method="post" role="form" class="php-email-form" enctype="multipart/form-data">
+
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <label for="name">Image</label>
+                  <input type="file" class="" name="image" onchange="loadFile(event)" accept="image/x-png,image/jpeg" required>
+                </div>
+                <img id="output" style="width: calc(100% - 30px); height: auto; margin-left: 15px;" />
+                <input type="hidden" class="form-control" name="type" value="1" required>
+
+                <div class="col-md-12 mb-3">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message"></div>
+                </div>
+
+                <div class="col-md-6 form-group">
+                  <input type="submit" class="btn btn-primary d-block w-100" value="Predict">
+                </div>
+              </div>
+
+            </form>
+          </div>
+    	</div>
+    </section>
+  </section>
+    
+    <script>
+	    var loadFile = function(event) {
+			var image = document.getElementById('output');
+			image.src = URL.createObjectURL(event.target.files[0]);
+		};
+    </script>
+
+  </main><!-- End #main -->
+
+
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="./static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="./static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="./static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <!-- <script src="./static/assets/vendor/php-email-form/validate.js"></script> -->
+  <script src="./static/assets/vendor/aos/aos.js"></script>
+  <script src="./static/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="./static/assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="./static/assets/js/main.js?v=3"></script>
+
+</body>
+
+</html>
