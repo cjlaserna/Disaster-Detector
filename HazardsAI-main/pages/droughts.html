@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    .back {
+      background-color: lightgreen;
+    }
+  </style>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Droughts/Wildfires - HazardsAI</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords"><!-- Favicons -->
+  <link href="./static/assets/img/favicon.png" rel="icon">
+  <link href="./static/assets/img/apple-touch-icon.png" rel="apple-touch-icon"><!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i"
+    rel="stylesheet"><!-- Vendor CSS Files -->
+  <link href="./static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./static/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="./static/assets/vendor/modal-video/css/modal-video.min.css" rel="stylesheet">
+  <link href="./static/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="./static/assets/vendor/aos/aos.css" rel="stylesheet"><!-- Template Main CSS File -->
+  <link href="./static/assets/css/style.css" rel="stylesheet">
+  <!-- =======================================================
+  * Template Name: eStartup - v3.0.0
+  * Template URL: https://bootstrapmade.com/estartup-bootstrap-landing-page-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header">
+      <div class="container d-flex align-items-center justify-content-between">
+  
+        <div id="logo">
+          <h1><a href="index.html"><span>Hazards</span>AI</a></h1>
+        </div>
+  
+        <nav id="nav-menu-container">
+          <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li class="menu-has-children menu-active"><a href="">Predict Disasters</a>
+              <ul>
+                <li><a href="earthquakes.html">Earthquakes/Landslides</a></li>
+                <li><a href="droughts.html">Droughts/Wildfires</a></li>
+                <li><a href="avalanches.html">Avalanches/Blizzards</a></li>
+              </ul>
+            </li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav><!-- #nav-menu-container -->
+      </div>
+    </header><!-- End Header -->
+  <main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <ol>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>Predict Disasters - Droughts/Wildfires</li>
+          </ol>
+        </div>
+      </div>
+    </section><!-- End Breadcrumbs -->
+    <section class="inner-page pt-4">
+      <div style="height:100vh;">
+        <br>
+        <br>
+        {% if output != "" %}
+        <center>
+          <div class = "back">
+          <h1 class="output">{{output}}</h1>
+        </div>
+        </center>
+        {% endif %}
+        {% if output1 != "" %}
+        <center>
+          <div class = "back">
+          <h1 class="output">{{output1}}</h1>
+        </div>
+        </center>
+        {% endif %}
+        {% if output2 != "" %}
+        <center>
+          <div class = "back">
+          <h1 class="output">{{output2}}</h1>
+        </div>
+        </center>
+        {% endif %}
+        <br><br>
+        <div class="container">
+          <div class="row">
+
+            <div class="col-md-6 mb-5 mb-md-0 aos-init aos-animate" data-aos="fade-up">
+              <h2>Chance of wildfire</h2>
+              <p class="mb-0">Using RF to determine the chance of a wildfire occuring</p><br>
+              <form action="/fires" method="post" role="form" class="php-email-form">
+
+                <div class="row">
+                  <br />
+                  <div class="col-md-6 form-group">
+                    <label for="name">Longitude (-90, 90)</label>
+                    <input type="number" class="form-control" name="longitude" min="-90" max="90" required>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="name">Latitude (-180, 180)</label>
+                    <input type="number" class="form-control" name="latitude" min="-180" max="180" required>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="name">Discovery Month (1-12)</label>
+                    <input type="number" class="form-control" name="month" min="1" max="12" required>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="name">Temperature 7 Days Before (°C)</label>
+                    <input type="number" class="form-control" name="temperature" required>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="name">Humidity 7 Days Before (0%-100%)</label>
+                    <input type="number" class="form-control" name="humidity" min="0" max="100" required>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="name">Precipitation 7 Days Before (mm)</label>
+                    <input type="number" class="form-control" name="precipitation" min="0" required>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="name">Wind 7 Days Before (m/s)</label>
+                    <input type="number" class="form-control" name="wind" min="0" required>
+                  </div>
+
+
+                  <div class="col-md-12 mb-3">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message"></div>
+                  </div>
+
+                  <div class="col-md-6 form-group">
+                    <input type="submit" class="btn btn-primary d-block w-100" value="Predict">
+                  </div>
+                </div>
+                <br>
+                </p>
+
+              </form>
+            </div>
+
+            <div class="col-md-5 mb-5 mb-md-0 aos-init aos-animate" style="margin-left: 8%;" data-aos="fade-up">
+              <h2>Drought</h2>
+              <p class="mb-0">Using CNNs to analyze signs of a drought
+              <p><br>
+              <form action="/fl" method="post" role="form" class="php-email-form" enctype="multipart/form-data">
+
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <label for="name">Image</label>
+                    <input type="file" class="" name="image" onchange="loadFile(event)" accept="image/x-png,image/jpeg"
+                      required>
+                  </div>
+                  <img id="output" style="width: calc(100% - 30px); height: auto; margin-left: 15px;" />
+                  <input type="hidden" class="form-control" name="type" value="1" required>
+
+                  <div class="col-md-12 mb-3">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message"></div>
+                  </div>
+
+                  <div class="col-md-6 form-group">
+                    <input type="submit" class="btn btn-primary d-block w-100" value="Predict">
+                  </div>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+        <script>
+          var loadFile = function (event) {
+            var image = document.getElementById('output');
+            image.src = URL.createObjectURL(event.target.files[0]);
+          };
+        </script>
+        <!-- ======= End of FORM ======= -->
+    </section>
+  </main><!-- End #main -->
+  <!-- ======= Footer ======= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-4">
+          <div class="footer-logo">
+            <a class="navbar-brand" href="#">HazardsAI</a>
+            <p>Accurately detecting natural disasters using machine learning to help people & the environment.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+            <h4>Quick Links</h4>
+            <ul class="list-unstyled">
+              <li>
+                <a href="https://github.com/cjlaserna/Disaster-Detector">Repo</a>
+              </li>
+              <li>
+                <a href="#">Devpost</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyrights">
+      <div class="container">
+        <div class="credits">
+          <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eStartup
+        -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+  <a href="#" class="back-to-top"></a> <!-- Vendor JS Files -->
+
+  <script src="./static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="./static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="./static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="./static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="./static/assets/vendor/modal-video/js/modal-video.min.js"></script>
+  <script src="./static/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="./static/assets/vendor/superfish/superfish.min.js"></script>
+  <script src="./static/assets/vendor/hoverIntent/hoverIntent.js"></script>
+  <script src="./static/assets/vendor/aos/aos.js"></script> <!-- Template Main JS File -->
+
+  <script src="./static/assets/js/main.js"></script>
+</body>
+
+</html>
