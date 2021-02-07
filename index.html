@@ -2,1282 +2,33 @@
 <html lang="en">
 
 <head>
-<style>
-html {
-  overflow-x: hidden;
-}
-
-body {
-  font-family: "Roboto", sans-serif;
-  color: #9fa1a4;
-  line-height: 1.5;
-}
-
-a {
-  color: #777;
-  transition: .3s all ease;
-}
-
-a:hover {
-  color: #000;
-}
-
-h1, h2, h3, h4, h5, h6, .font-heading {
-  font-family: "Poppins", sans-serif;
-  color: #000;
-}
-
-.container {
-  z-index: 2;
-  position: relative;
-}
-
-.text-black {
-  color: #000 !important;
-}
-
-.text-primary {
-  color: #3dc59c !important;
-}
-
-.border-top {
-  border-top: 1px solid #f2f2f2 !important;
-}
-
-.border-bottom {
-  border-bottom: 1px solid #f2f2f2 !important;
-}
-
-figure figcaption {
-  margin-top: .5rem;
-  font-style: italic;
-  font-size: .8rem;
-}
-
-section {
-  overflow: hidden;
-}
-
-.section {
-  padding: 7rem 0;
-}
-
-.section-heading {
-  font-size: 3rem;
-  font-weight: 700;
-  background: linear-gradient(-45deg, #3dc59c, #3dc59c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Back to top button */
-.back-to-top {
-  position: fixed;
-  display: none;
-  background: #3dc59c;
-  color: #fff;
-  width: 44px;
-  height: 44px;
-  text-align: center;
-  line-height: 1;
-  font-size: 16px;
-  border-radius: 50%;
-  right: 15px;
-  bottom: 15px;
-  transition: background 0.5s;
-  z-index: 11;
-}
-
-.back-to-top i {
-  color: #fff;
-  font-size: 24px;
-  position: absolute;
-  top: 8px;
-  left: 10px;
-}
-
-@media (max-width: 768px) {
-  .back-to-top {
-    bottom: 15px;
-  }
-}
-
-/* Default btn sre-tyling */
-.btn {
-  border: none;
-  padding: 15px 30px !important;
-}
-
-.btn.btn-outline-white {
-  border: 2px solid #fff;
-  background: none;
-  color: #fff;
-}
-
-.btn.btn-outline-white:hover {
-  background: #fff;
-  color: #3dc59c;
-}
-
-.btn.btn-primary {
-  background: #;
-  background: linear-gradient(-45deg, #3dc59c, #274685);
-  color: #fff;
-  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.15);
-}
-
-/* Feature 1 */
-.feature-1 .wrap-icon {
-  margin: 0 auto;
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  position: relative;
-  margin-bottom: 30px;
-  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
-  transform: scale(1);
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out,
-  			  box-shadow 0.2s ease-in-out;
-}
-
-.feature-1:hover .wrap-icon:hover {
-	transform: scale(1.04);
-}
-
-.feature-1:active .wrap-icon:active {
-	transform: scale(0.98);
-	box-shadow: none;
-}
-
-.feature-1 .wrap-icon.icon-1 {
-  background: linear-gradient(-45deg, #3dc59c, #3dc59c);
-}
-
-.feature-1 .wrap-icon .icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  font-size: 2.5rem;
-}
-
-.feature-1 h3 {
-  font-size: 20px;
-}
-
-.feature-1 p {
-  color: #b1b1b1;
-}
-
-/* Step */
-.step {
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
-  background: #fff;
-  padding: 40px;
-}
-
-.step .number {
-  background: linear-gradient(-45deg, #1391a5, #3dc59c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 700;
-  letter-spacing: .2rem;
-  margin-bottom: 10px;
-  display: block;
-}
-
-.step p:last-child {
-  margin-bottom: 0px;
-}
-
-/* Review */
-.review h3 {
-  font-size: 20px;
-}
-
-.review p {
-  line-height: 1.8;
-  font-style: italic;
-  color: #333333;
-}
-
-.review .stars span {
-  color: #FF8803;
-}
-
-.review .stars .muted {
-  color: #ccc;
-}
-
-.review .review-user img {
-  width: 70px;
-  margin: 0 auto;
-}
-
-/* Testimonial Carousel */
-.testimonial-carousel .owl-dots {
-  position: absolute;
-  bottom: -40px;
-  width: 100%;
-  text-align: center;
-}
-
-.testimonial-carousel .owl-dots .owl-dot {
-  display: inline-block;
-}
-
-.testimonial-carousel .owl-dots .owl-dot > span {
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  background-color: #cbd3da;
-  border-radius: 50%;
-  margin: 5px;
-}
-
-.testimonial-carousel .owl-dots .owl-dot.active {
-  outline: none;
-}
-
-.testimonial-carousel .owl-dots .owl-dot.active > span {
-  background: linear-gradient(-45deg, #1391a5, #274685);
-}
-
-/* Pricing */
-.pricing {
-  padding: 50px;
-  background: linear-gradient(-45deg, #1391a5, #274685);
-  color: #fff;
-  padding-bottom: 12rem !important;
-  position: relative;
-  border-radius: 4px;
-  color: #000000;
-  background: #fff;
-  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.2);
-}
-
-.pricing h3 {
-  color: #3dc59c;
-}
-
-.pricing .price-cta {
-  position: absolute;
-  bottom: 50px;
-  width: 100%;
-  text-align: center;
-  left: 0;
-}
-
-.pricing .price-cta .price {
-  display: block;
-  margin-bottom: 20px;
-  font-size: 2rem;
-  font-weight: 300;
-}
-
-.pricing .popularity {
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: .2rem;
-  display: block;
-  margin-bottom: 20px;
-}
-
-.pricing ul {
-  margin-bottom: 50px;
-}
-
-.pricing ul li {
-  margin-bottom: 10px;
-}
-
-.pricing .btn-white {
-  background: #fff;
-  border: 2px solid #f1f1f1;
-  border-radius: 4px;
-  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
-}
-
-.pricing .btn-white:hover {
-  color: #3dc59c;
-}
-
-.pricing.popular {
-  background: #fff;
-  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.2);
-  color: #000000;
-  background: linear-gradient(-45deg, #1391a5, #274685);
-  color: #fff;
-  box-shadow: none;
-}
-
-.pricing.popular .popularity {
-  color: #b3b3b3;
-}
-
-.pricing.popular h3 {
-  color: #fff;
-  background: none;
-}
-
-.pricing.popular .btn-white {
-  border: 2px solid #3dc59c;
-}
-
-/* CTA Section */
-.cta-section {
-  background: linear-gradient(to right, #274685 0%, #3db3c5 100%);
-  color: #fff;
-}
-
-.cta-section h2 {
-  color: #fff;
-  font-size: 3rem;
-  font-weight: 700;
-}
-
-@media screen and (max-width: 768px) {
-  .cta-section h2 {
-    font-size: 2rem;
-  }
-}
-
-.cta-section .btn {
-  background: #000000;
-  color: #fff;
-}
-
-/* Sticky Wrapper */
-.sticky-wrapper {
-  position: absolute;
-  z-index: 100;
-  width: 100%;
-}
-
-.sticky-wrapper .site-navbar {
-  transition: .3s all ease;
-}
-
-.sticky-wrapper .site-navbar .site-menu-toggle {
-  color: #fff;
-}
-
-.sticky-wrapper .site-navbar .site-logo a {
-  color: #fff;
-}
-
-.sticky-wrapper .site-navbar .site-menu > li > a {
-  color: rgba(255, 255, 255, 0.8) !important;
-}
-
-.sticky-wrapper .site-navbar .site-menu > li > a:hover, .sticky-wrapper .site-navbar .site-menu > li > a.active {
-  color: #fff !important;
-}
-
-.sticky-wrapper.is-sticky .burger:before, .sticky-wrapper.is-sticky .burger span, .sticky-wrapper.is-sticky .burger:after {
-  background: #000000;
-  transition: .0s all ease;
-}
-
-.sticky-wrapper.is-sticky .site-navbar {
-  background: #fff;
-  border-bottom: 1px solid transparent;
-  box-shadow: 4px 0 20px -5px rgba(0, 0, 0, 0.2);
-}
-
-.sticky-wrapper.is-sticky .site-navbar .site-logo a {
-  color: #000000 !important;
-}
-
-.sticky-wrapper.is-sticky .site-navbar .site-menu > li > a {
-  color: #000000 !important;
-}
-
-.sticky-wrapper.is-sticky .site-navbar .site-menu > li > a:hover, .sticky-wrapper.is-sticky .site-navbar .site-menu > li > a.active {
-  color: #3dc59c !important;
-}
-
-.sticky-wrapper.is-sticky .site-navbar .site-menu > li.active a {
-  color: #3dc59c !important;
-}
-
-.sticky-wrapper .shrink {
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
-}
-
-/* Contact Form */
-.form-control {
-  height: 53px;
-  border-radius: 0;
-  border: 1px solid #dae0e5;
-}
-
-.form-control:active, .form-control:focus {
-  outline: none;
-  box-shadow: none;
-  border: 1px solid #3dc59c;
-}
-
-.php-email-form .validate {
-  display: none;
-  color: red;
-  margin: 0 0 15px 0;
-  font-weight: 400;
-  font-size: 13px;
-}
-
-.php-email-form .error-message {
-  display: none;
-  color: #fff;
-  background: #ed3c0d;
-  text-align: left;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.php-email-form .error-message br + br {
-  margin-top: 25px;
-}
-
-.php-email-form .sent-message {
-  display: none;
-  color: #fff;
-  background: #18d26e;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.php-email-form .loading {
-  display: none;
-  background: #fff;
-  text-align: center;
-  padding: 15px;
-}
-
-.php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid #18d26e;
-  border-top-color: #eee;
-  -webkit-animation: animate-loading 1s linear infinite;
-  animation: animate-loading 1s linear infinite;
-}
-
-@-webkit-keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Blog */
-.post-entry {
-  margin-bottom: 60px;
-}
-
-.post-entry .post-text .post-meta {
-  color: #ccc;
-  font-size: 13px;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.post-entry .post-text h3 {
-  font-size: 20px;
-  color: #000000;
-}
-
-.post-entry .post-text h3 a {
-  color: #000000;
-}
-
-.post-entry .post-text h3 a:hover {
-  text-decoration: none;
-  color: #3dc59c;
-}
-
-.post-entry .post-text .readmore {
-  color: #3dc59c;
-}
-
-.sidebar-box {
-  margin-bottom: 30px;
-  padding: 25px;
-  font-size: 15px;
-  width: 100%;
-  float: left;
-  background: #fff;
-}
-
-.sidebar-box *:last-child {
-  margin-bottom: 0;
-}
-
-.sidebar-box h3 {
-  font-size: 18px;
-  margin-bottom: 15px;
-}
-
-.categories li, .sidelink li {
-  position: relative;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-  border-bottom: 1px dotted gray("300");
-  list-style: none;
-}
-
-.categories li:last-child, .sidelink li:last-child {
-  margin-bottom: 0;
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.categories li a, .sidelink li a {
-  display: block;
-}
-
-.categories li a span, .sidelink li a span {
-  position: absolute;
-  right: 0;
-  top: 0;
-  color: #ccc;
-}
-
-.categories li.active a, .sidelink li.active a {
-  color: #000000;
-  font-style: italic;
-}
-
-.comment-form-wrap {
-  clear: both;
-}
-
-.comment-list {
-  padding: 0;
-  margin: 0;
-}
-
-.comment-list .children {
-  padding: 50px 0 0 40px;
-  margin: 0;
-  float: left;
-  width: 100%;
-}
-
-.comment-list li {
-  padding: 0;
-  margin: 0 0 30px 0;
-  float: left;
-  width: 100%;
-  clear: both;
-  list-style: none;
-}
-
-.comment-list li .vcard {
-  width: 80px;
-  float: left;
-}
-
-.comment-list li .vcard img {
-  width: 50px;
-  border-radius: 50%;
-}
-
-.comment-list li .comment-body {
-  float: right;
-  width: calc(100% - 80px);
-}
-
-.comment-list li .comment-body h3 {
-  font-size: 20px;
-}
-
-.comment-list li .comment-body .meta {
-  text-transform: uppercase;
-  font-size: 13px;
-  letter-spacing: .1em;
-  color: #ccc;
-}
-
-.comment-list li .comment-body .reply {
-  padding: 5px 10px;
-  background: #e6e6e6;
-  color: #000000;
-  text-transform: uppercase;
-  font-size: 14px;
-}
-
-.comment-list li .comment-body .reply:hover {
-  color: #000000;
-  background: #e3e3e3;
-}
-
-.search-form {
-  background: #f7f7f7;
-  padding: 10px;
-}
-
-.search-form .form-group {
-  position: relative;
-}
-
-.search-form .form-group input {
-  padding-right: 50px;
-}
-
-.search-form .icon {
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-}
-
-/*--------------------------------------------------------------
-# Hero Section
---------------------------------------------------------------*/
-.hero-section {
-  background: linear-gradient(to right, rgba(39, 70, 133, 0.8) 0%, rgba(61, 179, 197, 0.8) 100%), url(../img/hero-bg.jpg);
-  position: relative;
-}
-
-.hero-section .wave {
-  width: 100%;
-  overflow: hidden;
-  position: absolute;
-  z-index: 1;
-  bottom: -150px;
-}
-
-@media screen and (max-width: 992px) {
-  .hero-section .wave {
-    bottom: -180px;
-  }
-}
-
-.hero-section .wave svg {
-  width: 100%;
-}
-
-.hero-section, .hero-section > .container > .row {
-  height: 100vh;
-  min-height: 880px;
-}
-
-.hero-section.inner-page {
-  height: 60vh;
-  min-height: 0;
-}
-
-.hero-section.inner-page .hero-text {
-  transform: translateY(-150px);
-  margin-top: -120px;
-}
-
-@media screen and (max-width: 992px) {
-  .hero-section.inner-page .hero-text {
-    margin-top: -80px;
-  }
-}
-
-.hero-section h1 {
-  font-size: 3.5rem;
-  color: #fff;
-  font-weight: 700;
-  margin-bottom: 30px;
-}
-
-@media screen and (max-width: 992px) {
-  .hero-section h1 {
-    font-size: 2.5rem;
-    text-align: center;
-  }
-}
-
-@media screen and (max-width: 992px) {
-  .hero-section .hero-text-image {
-    margin-top: 4rem;
-  }
-}
-
-.hero-section p {
-  font-size: 18px;
-  color: #fff;
-}
-
-.hero-section .iphone-wrap {
-  position: relative;
-}
-
-@media screen and (max-width: 992px) {
-  .hero-section .iphone-wrap {
-    text-align: center;
-  }
-}
-
-.hero-section .iphone-wrap .phone-2, .hero-section .iphone-wrap .phone-1 {
-  position: absolute;
-  top: -50%;
-  overflow: hidden;
-  left: 0;
-  box-shadow: 0 15px 50px 0 rgba(0, 0, 0, 0.3);
-  border-radius: 30px;
-}
-
-@media screen and (max-width: 992px) {
-  .hero-section .iphone-wrap .phone-2, .hero-section .iphone-wrap .phone-1 {
-    position: relative;
-    top: 0;
-    max-width: 100%;
-  }
-}
-
-.hero-section .iphone-wrap .phone-2, .hero-section .iphone-wrap .phone-1 {
-  width: 250px;
-}
-
-@media screen and (max-width: 992px) {
-  .hero-section .iphone-wrap .phone-1 {
-    margin-left: -150px;
-  }
-}
-
-.hero-section .iphone-wrap .phone-2 {
-  margin-top: 50px;
-  margin-left: 100px;
-  width: 250px;
-}
-
-@media screen and (max-width: 992px) {
-  .hero-section .iphone-wrap .phone-2 {
-    width: 250px;
-    position: absolute;
-    margin-top: 0px;
-    margin-left: 100px;
-  }
-}
-
-body {
-  background-color: #3dc59c;
-}
-/*--------------------------------------------------------------
-# Nav
---------------------------------------------------------------*/
-.site-navbar {
-  margin-bottom: 0px;
-  z-index: 1999;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-.site-navbar .site-logo {
-  position: relative;
-  font-size: 24px;
-}
-
-.site-navbar .site-logo a {
-  color: #fff;
-}
-
-.site-navbar .site-logo a:hover {
-  text-decoration: none;
-}
-
-.site-navbar .site-navigation .site-menu {
-  margin-bottom: 0;
-}
-
-.site-navbar .site-navigation .site-menu a {
-  text-decoration: none !important;
-  display: inline-block;
-}
-
-.site-navbar .site-navigation .site-menu > li {
-  display: inline-block;
-}
-
-.site-navbar .site-navigation .site-menu > li > a {
-  padding: 30px 20px;
-  color: #000000;
-  display: inline-block;
-  text-decoration: none !important;
-}
-
-.site-navbar .site-navigation .site-menu > li > a:hover {
-  color: #3dc59c;
-}
-
-.site-navbar .site-navigation .site-menu > li.active > a {
-  color: #fff !important;
-}
-
-.site-navbar .site-navigation .site-menu .has-children {
-  position: relative;
-}
-
-.site-navbar .site-navigation .site-menu .has-children > a {
-  position: relative;
-  padding-right: 20px;
-}
-
-.site-navbar .site-navigation .site-menu .has-children > a:before {
-  position: absolute;
-  content: "\ea99";
-  font-size: 16px;
-  top: 52%;
-  right: 0;
-  transform: translateY(-50%);
-  font-family: 'icofont';
-}
-
-.site-navbar .site-navigation .site-menu .has-children .dropdown {
-  visibility: hidden;
-  opacity: 0;
-  top: 100%;
-  position: absolute;
-  text-align: left;
-  box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
-  padding: 0px 0;
-  margin-top: 15px;
-  margin-left: 0px;
-  background: #fff;
-  transition: 0.2s 0s;
-}
-
-.site-navbar .site-navigation .site-menu .has-children .dropdown.arrow-top {
-  position: absolute;
-}
-
-.site-navbar .site-navigation .site-menu .has-children .dropdown.arrow-top:before {
-  bottom: 100%;
-  left: 20%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-}
-
-.site-navbar .site-navigation .site-menu .has-children .dropdown.arrow-top:before {
-  border-color: rgba(136, 183, 213, 0);
-  border-bottom-color: #fff;
-  border-width: 10px;
-  margin-left: -10px;
-}
-
-.site-navbar .site-navigation .site-menu .has-children .dropdown a {
-  text-transform: none;
-  letter-spacing: normal;
-  transition: 0s all;
-  color: #000000;
-}
-
-.site-navbar .site-navigation .site-menu .has-children .dropdown .active {
-  color: #3dc59c !important;
-}
-
-.site-navbar .site-navigation .site-menu .has-children .dropdown > li {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  min-width: 210px;
-}
-
-.site-navbar .site-navigation .site-menu .has-children .dropdown > li > a {
-  padding: 9px 20px;
-  display: block;
-}
-
-.site-navbar .site-navigation .site-menu .has-children .dropdown > li > a:hover {
-  background: #f2f4f6;
-  color: #000000;
-}
-
-.site-navbar .site-navigation .site-menu .has-children .dropdown > li.has-children > a:before {
-  content: "\ea75";
-  right: 20px;
-}
-
-.site-navbar .site-navigation .site-menu .has-children .dropdown > li.has-children > .dropdown, .site-navbar .site-navigation .site-menu .has-children .dropdown > li.has-children > ul {
-  left: 100%;
-  top: 0;
-}
-
-.site-navbar .site-navigation .site-menu .has-children .dropdown > li.has-children:hover > a, .site-navbar .site-navigation .site-menu .has-children .dropdown > li.has-children:active > a, .site-navbar .site-navigation .site-menu .has-children .dropdown > li.has-children:focus > a {
-  background: #f2f4f6;
-}
-
-.site-navbar .site-navigation .site-menu .has-children:hover > a, .site-navbar .site-navigation .site-menu .has-children:focus > a, .site-navbar .site-navigation .site-menu .has-children:active > a {
-  color: #3dc59c;
-}
-
-.site-navbar .site-navigation .site-menu .has-children:hover, .site-navbar .site-navigation .site-menu .has-children:focus, .site-navbar .site-navigation .site-menu .has-children:active {
-  cursor: pointer;
-}
-
-.site-navbar .site-navigation .site-menu .has-children:hover > .dropdown, .site-navbar .site-navigation .site-menu .has-children:focus > .dropdown, .site-navbar .site-navigation .site-menu .has-children:active > .dropdown {
-  transition-delay: 0s;
-  margin-top: -10px;
-  visibility: visible;
-  opacity: 1;
-}
-
-.site-mobile-menu {
-  width: 300px;
-  position: fixed;
-  right: 0;
-  z-index: 2000;
-  padding-top: 20px;
-  background: #fff;
-  height: calc(100vh);
-  transform: translateX(110%);
-  box-shadow: -10px 0 20px -10px rgba(0, 0, 0, 0.1);
-  transition: .3s all ease-in-out;
-}
-
-.offcanvas-menu .site-mobile-menu {
-  transform: translateX(0%);
-}
-
-.site-mobile-menu .site-mobile-menu-header {
-  width: 100%;
-  float: left;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.site-mobile-menu .site-mobile-menu-header .site-mobile-menu-close {
-  float: right;
-  margin-top: 8px;
-}
-
-.site-mobile-menu .site-mobile-menu-header .site-mobile-menu-close span {
-  font-size: 30px;
-  display: inline-block;
-  padding-left: 10px;
-  padding-right: 0px;
-  line-height: 1;
-  cursor: pointer;
-  transition: .3s all ease;
-}
-
-.site-mobile-menu .site-mobile-menu-header .site-mobile-menu-logo {
-  float: left;
-  margin-top: 10px;
-  margin-left: 0px;
-}
-
-.site-mobile-menu .site-mobile-menu-header .site-mobile-menu-logo a {
-  display: inline-block;
-  text-transform: uppercase;
-}
-
-.site-mobile-menu .site-mobile-menu-header .site-mobile-menu-logo a img {
-  max-width: 70px;
-}
-
-.site-mobile-menu .site-mobile-menu-header .site-mobile-menu-logo a:hover {
-  text-decoration: none;
-}
-
-.site-mobile-menu .site-mobile-menu-body {
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-  position: relative;
-  padding: 0 20px 20px 20px;
-  height: calc(100vh - 52px);
-  padding-bottom: 150px;
-}
-
-.site-mobile-menu .site-nav-wrap {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  position: relative;
-}
-
-.site-mobile-menu .site-nav-wrap a {
-  padding: 10px 20px;
-  display: block;
-  position: relative;
-}
-
-.site-mobile-menu .site-nav-wrap a:hover {
-  color: #3dc59c;
-}
-
-.site-mobile-menu .site-nav-wrap li {
-  position: relative;
-  display: block;
-}
-
-.site-mobile-menu .site-nav-wrap li.active > a {
-  color: #3dc59c;
-}
-
-.site-mobile-menu .site-nav-wrap .arrow-collapse {
-  position: absolute;
-  right: 0px;
-  top: 10px;
-  z-index: 20;
-  width: 36px;
-  height: 36px;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 50%;
-}
-
-.site-mobile-menu .site-nav-wrap .arrow-collapse:before {
-  font-size: 12px;
-  z-index: 20;
-  font-family: "icofont";
-  content: "\ea99";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-180deg);
-  transition: .3s all ease;
-}
-
-.site-mobile-menu .site-nav-wrap .arrow-collapse.collapsed:before {
-  transform: translate(-50%, -50%);
-}
-
-.site-mobile-menu .site-nav-wrap > li {
-  display: block;
-  position: relative;
-  float: left;
-  width: 100%;
-}
-
-.site-mobile-menu .site-nav-wrap > li > a {
-  padding-left: 20px;
-  font-size: 20px;
-}
-
-.site-mobile-menu .site-nav-wrap > li > ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.site-mobile-menu .site-nav-wrap > li > ul > li {
-  display: block;
-}
-
-.site-mobile-menu .site-nav-wrap > li > ul > li > a {
-  padding-left: 40px;
-  font-size: 16px;
-}
-
-.site-mobile-menu .site-nav-wrap > li > ul > li > ul {
-  padding: 0;
-  margin: 0;
-}
-
-.site-mobile-menu .site-nav-wrap > li > ul > li > ul > li {
-  display: block;
-}
-
-.site-mobile-menu .site-nav-wrap > li > ul > li > ul > li > a {
-  font-size: 16px;
-  padding-left: 60px;
-}
-
-/* Burger */
-.burger {
-  width: 28px;
-  height: 32px;
-  cursor: pointer;
-  position: relative;
-  z-index: 99;
-  float: right;
-}
-
-.burger:before, .burger span, .burger:after {
-  width: 100%;
-  height: 2px;
-  display: block;
-  background: #fff;
-  border-radius: 2px;
-  position: absolute;
-  opacity: 1;
-}
-
-.burger:before, .burger:after {
-  transition: top 0.35s cubic-bezier(0.23, 1, 0.32, 1), transform 0.35s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.35s cubic-bezier(0.23, 1, 0.32, 1), background-color 1.15s cubic-bezier(0.86, 0, 0.07, 1);
-  -webkit-transition: top 0.35s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.35s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.35s cubic-bezier(0.23, 1, 0.32, 1), background-color 1.15s cubic-bezier(0.86, 0, 0.07, 1);
-  content: "";
-}
-
-.burger:before {
-  top: 4px;
-}
-
-.burger span {
-  top: 15px;
-}
-
-.burger:after {
-  top: 26px;
-}
-
-/* Hover */
-.burger:hover:before {
-  top: 7px;
-}
-
-.burger:hover:after {
-  top: 23px;
-}
-
-/* Click */
-.burger.active span {
-  opacity: 0;
-}
-
-.burger.active:before, .burger.active:after {
-  top: 40%;
-}
-
-.burger.active:before {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=5);
-  /*for IE*/
-}
-
-.burger.active:after {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=-5);
-  /*for IE*/
-}
-
-.burger:focus {
-  outline: none;
-}
-
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
-.footer {
-  padding: 5rem 0 2.5rem 0;
-}
-
-.footer h3 {
-  font-size: 18px;
-  margin-bottom: 30px;
-}
-
-.footer ul li {
-  margin-bottom: 10px;
-}
-
-.footer a {
-  color: #000;
-}
-
-.footer .copyright {
-  margin-bottom: 0px;
-}
-
-.footer .copyright, .footer .credits {
-  font-size: 14px;
-}
-
-.social a {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: #f8f9fa;
-  position: relative;
-  text-align: center;
-  transition: .3s background ease;
-  color: #0d1e2d;
-}
-
-.social a span {
-  display: inline-block;
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.social a:hover {
-  color: #fff;
-  background: #3dc59c;
-}
-
-.output {
-	text-align: center;
-	margin-bottom: 60px;
-	background-color: var(--cyan);
-	width: max-content;
-	padding: 30px;
-	border-radius: 20px;
-	color: white;
-}
-
-.btn-primary {
-	transition: box-shadow 0.2s ease-in-out;
-}
-.btn-primary:active {
-	box-shadow: none !important;
-	border: none !important;
-}
-
-</style>
-
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>GeoWarn</title>
-  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/e/e1/Drought.jpg" type="image/png">
-
+  <title>eStartup Bootstrap Template - Index</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="./static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="./static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="./static/assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="./static/assets/vendor/line-awesome/css/line-awesome.min.css" rel="stylesheet">
-  <link href="./static/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-	  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="assets/vendor/modal-video/css/modal-video.min.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="./static/assets/css/style.css?v=7" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
-  * Template Name: SoftLand - v2.2.0
-  * Template URL: https://bootstrapmade.com/softland-bootstrap-app-landing-page-template/
+  * Template Name: eStartup - v3.0.0
+  * Template URL: https://bootstrapmade.com/estartup-bootstrap-landing-page-template/
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
@@ -1285,250 +36,282 @@ body {
 
 <body>
 
-  <!-- ======= Mobile Menu ======= -->
-  <div class="site-mobile-menu site-navbar-target">
-    <div class="site-mobile-menu-header">
-      <div class="site-mobile-menu-close mt-3">
-        <span class="icofont-close js-menu-toggle"></span>
-      </div>
-    </div>
-    <div class="site-mobile-menu-body"></div>
-  </div>
-
   <!-- ======= Header ======= -->
-  <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
+  <header id="header" class="header">
+    <div class="container d-flex align-items-center justify-content-between">
 
-    <div class="container">
-      <div class="row align-items-center">
-
-        <img href="./static/assets/img/GeoWarnAI-icon.png" type="image/icon type">
-
-        <div class="col-6 col-lg-2">
-          <h1 class="mb-0 site-logo"><a href="/" class="mb-0">GeoWarn</a></h1>
-        </div>
-
-        <div class="col-12 col-md-10 d-none d-lg-block">
-          <nav class="site-navigation position-relative text-right" role="navigation">
-
-            <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-              <li class="active"><a href="/" class="nav-link">Home</a></li>
-              <li><a href="/earthquakes" class="nav-link">Earthquakes</a></li>
-              <li><a href="/floods" class="nav-link">Floods</a></li>
-              <li><a href="/droughts" class="nav-link">Droughts</a></li>
-            </ul>
-          </nav>
-        </div>
-
-        <div class="col-6 d-inline-block d-lg-none ml-md-0 py-3" style="position: relative; top: 3px;">
-
-          <a href="#" class="burger site-menu-toggle js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
-            <span></span>
-          </a>
-        </div>
-
+      <div id="logo">
+        <h1><a href="index.html"><span>Hazards</span>AI</a></h1>
       </div>
-    </div>
 
-  </header>
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="index.html">Home</a></li>
+          <li class="menu-has-children"><a href="">Predict Disasters</a>
+            <ul>
+              <li><a href="#earthquakes">Earthquakes/Landslides</a></li>
+              <li><a href="#droughts">Droughts/Wildfires</a></li>
+              <li><a href="#avalanches">Avalanches/Blizzards</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section class="hero-section" id="hero">
-
-    <div class="wave">
-
-      <svg width="100%" height="355px" viewBox="0 0 1920 355" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-          <g id="Apple-TV" transform="translate(0.000000, -402.000000)" fill="#FFFFFF">
-            <path d="M0,439.134243 C175.04074,464.89273 327.944386,477.771974 458.710937,477.771974 C654.860765,477.771974 870.645295,442.632362 1205.9828,410.192501 C1429.54114,388.565926 1667.54687,411.092417 1920,477.771974 L1920,757 L1017.15166,757 L0,757 L0,439.134243 Z" id="Path"></path>
-          </g>
-        </g>
-      </svg>
-
+  <section id="hero">
+    <div class="hero-container" data-aos="fade-in">
+      <h1>This is HazardsAI.</h1>
+      <h2>Accurately detecting natural disasters using machine learning to help people &amp; the environment.</h2>
+      <img src="assets/img/hero-img.png" alt="Hero Imgs" data-aos="zoom-out" data-aos-delay="100">
+      <a href="#get-started" class="btn-get-started scrollto">Get Started</a>
     </div>
-
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-12 hero-text-image">
-          <div class="row">
-            <div class="col-lg-7 text-center text-lg-left">
-              <h1 data-aos="fade-right">GeoWarn</h1>
-              <p class="mb-5" data-aos="fade-right" data-aos-delay="100">Using Machine Learning to accurately detect dangerous natural disaters thus helping people and the environment</p>
-              <p data-aos="fade-right" data-aos-delay="200" data-aos-offset="-500"><a href="#" class="btn btn-outline-white get-started">Get started</a></p>
-            </div>
-            <div class="col-lg-5 iphone-wrap">
-              <img src="https://cbsnews1.cbsistatic.com/hub/i/2015/02/12/83d92b95-b48b-430b-a6e8-0ae3e38d2cdb/51636665.jpg" alt="Image" class="phone-1" data-aos="fade-right">
-              <img src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/isuiAgoTGa.U/v0/1000x-1.jpg" alt="Image" class="phone-2" data-aos="fade-right" data-aos-delay="200">
-            
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </section><!-- End Hero -->
+  </section><!-- End Hero Section -->
 
   <main id="main">
-    <section class="section">
-      <div class="row justify-content-center text-center mb-5">
-        <div class="col-md-5" data-aos="fade-up">
-          <h2 class="section-heading">The Project</h2>
+
+    <!-- ======= Get Started Section ======= -->
+    <section id="get-started" class="padd-section text-center">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+
+          <h2>Natural Disasters</h2>
+          <p>Try using our system to detect one of the following natural events.</p>
+
         </div>
       </div>
-      <div class="container col-md-8">
-        <div class="row align-items-center">
-          <div class="col-md-6 mr-auto">
-            <h2 class="mb-4">The goal</h2>
-            <p class="mb-4">Natural GeoWarns have led to several injuries and fatalities per year. I wanted to minimize this by detecting several dangerous diseases that have had a large impact on the world. In order to do this we have used machine learning and deep learning. </p>
-            <p><a href="#" class="btn btn-primary get-started-2">Get Started</a></p>
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="feature-block">
+
+              <img src="assets/img/svg/landslide.svg" alt="img" class="img-fluid">
+              <h4>Earthquakes/Landslides</h4>
+              <a href="#">Try it out.</a>
+
+            </div>
           </div>
-          <div class="" data-aos="fade-left">
-            <img src="https://miro.medium.com/max/2560/0*0vd4mwKDLcOy1wFp.jpg" style="width: 300px; height: auto; border-radius: 15px" alt="Image" class="phone-1">
+
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="feature-block">
+
+              <img src="assets/img/svg/wildfires.svg" alt="img" class="img-fluid">
+              <h4>Drought/Wildfire</h4>
+              <a href="#">Try it out.</a>
+
+            </div>
           </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="feature-block">
+
+              <img src="assets/img/svg/blizzards.svg" alt="img" class="img-fluid">
+              <h4>Avalanches/Blizzards</h4>
+              <a href="#">Try it out.</a>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- End Get Started Section -->
+
+    <!-- ======= About section ======= -->
+    <section id="about-us" class="about-us padd-section">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+
+          <div class="col-md-5 col-lg-3">
+            <img src="assets/img/about-img.png" alt="About" data-aos="zoom-in" data-aos-delay="100">
+          </div>
+
+          <div class="col-md-7 col-lg-5">
+            <div  data-aos="fade-left" data-aos-delay="100">
+
+              <h2><span>HazardsAI</span> Project Details </h2>
+              <p>"As someone forced to evacuate due to wildfires this year, and floods a couple years ago, I've always wanted a more accurate web app that could inform me about upcoming disasters better than the news. There have been many situations where the news warnings would not be right, and HazardsAI solves this problem by using  realtime evidence. HazardsAI is made up of 3 parts.</p>
+
+              <ul class="list-unstyled">
+                <li><i class="fa fa-angle-right"></i>1. Earthquake Magnitude linear regression model</li>
+                <p>The project goes one step further to see if there are aftershocks leading to landslides.</p>
+                <li><i class="fa fa-angle-right"></i>2. Droughts and Fire Image Classifier and Random Forest Classigier</li>
+                <p>Next, the drought and fire machine learning detection feature, it uses an image classifier and random forest classifier to detect famine and wildfires. </p>
+                 <!-- ======= If you get the chance, change this to blizzards/avalanche ======= -->
+                <li><i class="fa fa-angle-right"></i>Floods Random Forest Classifier</li>
+                <p>The last part is another random forest classifier to predict floods.</p>
+                 <!-- ======= I'll change it, just dm me what to change it to. -guppy ======= -->
+              </ul>
+              
+              <p>Natural disasters lead to millions of injuries and fatalities per year. HazardsAI aim to minimize this by detecting catastrophese ahead of time that may lead to large casualties. Machine learning is the best way to do this.</p>
+
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
+    <!-- ======= end of abt ======= -->
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="padd-section text-center">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
 
-      <!-- Inspiration -->
-      <div class="row justify-content-center text-center mb-5">
-        <div class="col-md-5" data-aos="fade-up">
-          <h2 class="section-heading">Why GeoWarn</h2>
+          <div class="col-md-8">
+
+            <div class="testimonials-content">
+              <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+                <div class="carousel-inner" role="listbox">
+
+                  <div class="carousel-item  active">
+                    <div class="top-top">
+
+                      <h2>We're still at the mercy of nature.</h2>
+                      <p>Even in our modern world, with all of our technology, with machine learning, we're still at the mercy of nature and we'll do whatever we can to protect ourselves and the environment. </p>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="btm-btm">
+                </div>
+
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-      <p class="mb-4" style="margin-left: 20%; width: 60%;">As someone forced to evacuate due to several wildfires this year and floods a couple years ago, I wish there was always an app that could inform me better and more accurately than the news. Many atimes the news warnings would not be right, and I wished that there would be some app that could accurately figure out if a GeoWarn is occuring with realtime evidence. This led me to the creation of GeoWarn. Geo Warn is made up of 3 parts. The first part is a linear regression model that detects magnitudes of earthquakes. The project goes one step further to see if there are aftershocks of landslides. Next is the drought and fire machine learning detection feature. It uses an image classifier and random forest classifier to detect famine and wildfires. The last part is another random forest classifier to predict floods.</p>
-  
+    </section><!-- End Testimonials Section -->
 
-    
-  
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="padd-section">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+          <h2>Contact</h2>
+        </div>
+
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-lg-3 col-md-4">
+
+            <div class="info">
+              <div>
+                <i class="fa fa-github"></i>
+                <p> <a href="https://github.com/cjlaserna/Disaster-Detector">Github Repo</p></a>
+              </div>
+
+              <div class="email">
+                <i class="fa fa-envelope"></i>
+                <p>info@example.com</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-5 col-md-8">
+            <div class="form">
+              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                <div class="form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group mt-3">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group mt-3">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group mt-3">
+                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                  <div class="validate"></div>
+                </div>
+                <div class="mb-3">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                </div>
+                <div class="text-center"><button type="submit">Send Message</button></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Contact Section -->
+
   </main><!-- End #main -->
 
+  <!-- ======= Footer ======= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
 
+        <div class="col-md-12 col-lg-4">
+          <div class="footer-logo">
 
-      <section class="section">
+            <a class="navbar-brand" href="#">HazardsAI</a>
+            <p>Accurately detecting natural disasters using machine learning to help people & the environment.            </p>
 
-        <div class="container">
-          <div class="row justify-content-center text-center mb-5" data-aos="fade">
-            <div class="col-md-6 mb-5">
-            </div>
-          </div>
-  
-          <div class="row">
-            <div class="col-md-4">
-              <div class="step">
-                <span class="number">01</span>
-                <h3>HTML/CSS/JS</h3>
-                <p>Used in order to create a clean and simple User Interface</p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="step">
-                <span class="number">02</span>
-                <h3>Machine Learning</h3>
-                <p>Used several deep and ML models (Sequential, RF, Linear/Logistic Reg) to get accurate results.</p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="step">
-                <span class="number">03</span>
-                <h3>Flask</h3>
-                <p>Used for backend. Added the saved models here for predictions</p>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-md-4 mr-auto">
-              <h2 class="mb-4">Ways to Stay Safe during Environmental Disasters</h2>
-              <p class="mb-4">Stay in your safe area and do not drive until the danger has passed</p>
-              <p class="mb-4">Listen to your portable radio for important updates and instructions from local authorities</p>
-              <p class="mb-4">If you have not been ordered to evacuate, stay in a safe area or shelter during a natural disaster</p>
-
-            </div>
-            <div class="col-md-6" data-aos="fade-left">
-              <img src="https://connect.oeglobal.org/uploads/default/optimized/1X/a9f97585a0bfee5f3d469bb39d38680865d0f17e_2_518x500.png" alt="Image" class="img-fluid">
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-    <!-- ======= Functions part ======= -->
-    <section class="section" id="start">
-      <div class="container">
-
-        <div class="row justify-content-center text-center mb-5">
-          <div class="col-md-5" data-aos="fade-up">
-            <h2 class="section-heading">Catastrophes</h2>
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="">
-            <div class="feature-1 text-center">
-              <a href="/fires" target="_blank"><div class="wrap-icon icon-1">
-                
-	            <i class="icon fas fa-globe-americas"></i>
-              </div></a>
-              <h3 class="mb-3">Earthquakes</h3>
-              <div class="text-left">
-                
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="feature-1 text-center">
-              <a href="/hurricanes" target="_blank"><div class="wrap-icon icon-1">
-	            <i class="icon fas fa-water"></i>
-              </div></a>
-              <h3 class="mb-3">Floods</h3>
-              <div class="text-left">
-                
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="feature-1 text-center">
-              <a href="/earthquakes" target="_blank"><div class="wrap-icon icon-1">
-                <i class="icon fas fa-fire"></i>
-              </div></a>
-              <h3 class="mb-3">Droughts</h3>
-              <div class="text-left">
-                
-              </div>
-            </div>
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+            <h4>Quick Links</h4>
+
+            <ul class="list-unstyled">
+              <li><a href="https://github.com/cjlaserna/Disaster-Detector">Repo</a></li>
+              <li><a href="#">Devpost</a></li>
+            </ul>
+
           </div>
         </div>
 
       </div>
-    </section>
-
-      <div class="row justify-content-center text-center">
-        <div class="col-md-7">
-          <p class="copyright">&copy; Copyright GeoWarn. All Rights Reserved</p>
-        </div>
-      </div>
-
     </div>
-  </footer>
 
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+    <div class="copyrights">
+      <div class="container">
+        <div class="credits">
+          <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eStartup
+        -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </div>
+
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="./static/assets/vendor/jquery/jquery.min.js"></script>
-  <script src="./static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="./static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="./static/assets/vendor/php-email-form/validate.js"></script>
-  <script src="./static/assets/vendor/aos/aos.js"></script>
-  <script src="./static/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-  <script src="./static/assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/modal-video/js/modal-video.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/superfish/superfish.min.js"></script>
+  <script src="assets/vendor/hoverIntent/hoverIntent.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="./static/assets/js/main.js?v=2"></script>
+  <script src="assets/js/main.js"></script>
 
 </body>
 
